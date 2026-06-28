@@ -1,6 +1,11 @@
-#include <iostream>
+#include "clsUtil.h"
+#include<iostream>
+#include<vector>
+#include"clsString.h"
+#include"clsDate.h"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    clsUtil::Srand();
 }
