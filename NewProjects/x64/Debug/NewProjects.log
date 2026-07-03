@@ -1,0 +1,23 @@
+﻿  NewProjects.cpp
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(40,25): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(45,29): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(57,30): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(194,29): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(325,30): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(373,22): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsUtil.h(63,5): warning C4102: 'defualt': unreferenced label
+  (compiling source file 'NewProjects.cpp')
+  
+  NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe
