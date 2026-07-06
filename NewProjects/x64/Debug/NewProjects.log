@@ -20,4 +20,7 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(373,22): warning
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsUtil.h(63,5): warning C4102: 'defualt': unreferenced label
   (compiling source file 'NewProjects.cpp')
   
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(25,144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
   NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe

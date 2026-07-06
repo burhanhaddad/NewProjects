@@ -60,7 +60,7 @@ public:
 	}
 
 	//property Get
-	string GetEmail() {
+	string GetPhone() {
 		return _Phone;
 	}
 
