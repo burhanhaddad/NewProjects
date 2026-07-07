@@ -12,5 +12,5 @@ int main()
     Client1.Print();
 
     clsBankClient Client2 = clsBankClient::Find("A105");
-    Client2.Print();
+    Client2.Print();    
 }
