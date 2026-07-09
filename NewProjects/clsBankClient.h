@@ -16,6 +16,7 @@ private:
 	string _AccountNumber;
 	string _PinCode;
 	float _AccountBalance;
+    bool _MarkForDelete = false;
 
 	static clsBankClient _ConvertLineToClientObject(string Line, string Separator) {
 
@@ -78,8 +79,11 @@ private:
             string Line;
             for (clsBankClient C : vClients) {
 
-                Line = clsBankClient::_ConvertClientObjectToLine(C);
-                MyFile << Line << endl;
+                if (C.MarkForDelete() == false)
+                {
+                    Line = clsBankClient::_ConvertClientObjectToLine(C);
+                    MyFile << Line << endl;
+                }
 
             }
         }
@@ -114,7 +118,6 @@ private:
 
         AddDataToFile(_ConvertClientObjectToLine(*this));
     }
-
 public:
 	clsBankClient(enMode Mode, string FirstName, string LastName, string Email, string Phone, string AccountNumber, string PinCode, float AccountBalance)
 		:clsPerson(FirstName, LastName, Email, Phone) 
@@ -129,7 +132,9 @@ public:
     {
         return (_Mode == enMode::EmptyMode);
     }
-
+    bool MarkForDelete() {
+        return _MarkForDelete;
+    }
 
     string AccountNumber()
     {
@@ -270,5 +275,25 @@ public:
 
         return clsBankClient(enMode::AddNewMode, "", "", "", "", AccountNumber, "", 0);
     }
+
+
+    bool Delete() {
+        vector <clsBankClient> vClients;
+        vClients = _LoadClientDataFromFile();
+
+        for (clsBankClient& C : vClients) {
+
+            if (C.AccountNumber() == _AccountNumber)
+            {
+                C._MarkForDelete = true;
+                break;
+            }
+
+        }
+        _SaveDataToFile(vClients);
+        *this = _GetEmptyClientObject();
+        return true;
+    }
+
 };
 

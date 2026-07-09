@@ -23,8 +23,8 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsUtil.h(63,5): warning C41
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsInputValidate.h(95,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(31,144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(32,144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(262,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(267,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
   NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe
