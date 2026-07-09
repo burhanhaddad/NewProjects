@@ -11,7 +11,7 @@ using namespace std;
 class clsBankClient : public clsPerson
 {
 private:
-	enum enMode { EmptyMode = 0, UpdateMode = 1 };
+    enum enMode { EmptyMode = 0, UpdateMode = 1, AddNewMode = 2 };
 	enMode _Mode;
 	string _AccountNumber;
 	string _PinCode;
@@ -86,6 +86,16 @@ private:
         MyFile.close();
         
     }
+    void AddDataToFile(string DataLine) {
+
+        fstream MyFile;
+        MyFile.open("Clients.txt", ios::app);
+        if (MyFile.is_open())
+        {
+            MyFile << DataLine << endl;
+
+        }
+    }
     void _Update() {
 
         vector <clsBankClient>vClients;
@@ -99,6 +109,10 @@ private:
             }
         }
         _SaveDataToFile(vClients);
+    }
+    void _AddNew() {
+
+        AddDataToFile(_ConvertClientObjectToLine(*this));
     }
 
 public:
@@ -214,24 +228,47 @@ public:
 
 
     }
-    enum enSaveResult { svFaildEmptyObject = 0, svSucceeded = 1 };
+    enum enSaveResult { svFaildEmptyObject = 0, svSucceeded = 1, svFaildAccountNumberExists };
 
     enSaveResult Save() {
 
         switch (_Mode) {
 
         case enMode::EmptyMode:
-            return enSaveResult::svFaildEmptyObject;
+            if (IsEmpty())
+            {
+                return enSaveResult::svFaildEmptyObject;
+            }
             
         case enMode::UpdateMode:
             _Update();
             return enSaveResult::svSucceeded;
+            break;
+            
+        case enMode::AddNewMode:
+
+            if (IsClientExist(_AccountNumber))
+            {
+                return enSaveResult::svFaildAccountNumberExists;
+            }
+            else
+            {
+                _AddNew();
+                _Mode = enMode::UpdateMode;
+                return enSaveResult::svSucceeded;
+            }
+            break;
         }
     }
     static bool IsClientExist(string AccountNumber) {
 
         clsBankClient Client = clsBankClient::Find(AccountNumber);
         return (!Client.IsEmpty());
+    }
+
+    static clsBankClient GetAddNewClient(string AccountNumber) {
+
+        return clsBankClient(enMode::AddNewMode, "", "", "", "", AccountNumber, "", 0);
     }
 };
 
