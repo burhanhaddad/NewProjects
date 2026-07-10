@@ -300,7 +300,18 @@ public:
         return _LoadClientDataFromFile();
     }
 
+    static float GetTotalBalances() {
 
+        vector <clsBankClient>vClients;
+        vClients = _LoadClientDataFromFile();
+
+        double TotalBalances = 0;
+        for (clsBankClient& C : vClients) {
+
+            TotalBalances += C.AccountBalance;
+        }
+        return TotalBalances;
+    }
 
 };
 
