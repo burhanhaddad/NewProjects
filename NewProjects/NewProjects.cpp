@@ -229,6 +229,6 @@ void ShowTotalBalances()
 
 int main()
 {
-   
+    ShowClientsList();
     ShowTotalBalances();
 }
