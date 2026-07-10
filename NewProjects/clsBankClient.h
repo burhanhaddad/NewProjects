@@ -235,6 +235,23 @@ public:
     }
     enum enSaveResult { svFaildEmptyObject = 0, svSucceeded = 1, svFaildAccountNumberExists };
 
+    bool Delete() {
+        vector <clsBankClient> vClients;
+        vClients = _LoadClientDataFromFile();
+
+        for (clsBankClient& C : vClients) {
+
+            if (C.AccountNumber() == _AccountNumber)
+            {
+                C._MarkForDelete = true;
+                break;
+            }
+
+        }
+        _SaveDataToFile(vClients);
+        *this = _GetEmptyClientObject();
+        return true;
+    }
     enSaveResult Save() {
 
         switch (_Mode) {
@@ -277,23 +294,13 @@ public:
     }
 
 
-    bool Delete() {
-        vector <clsBankClient> vClients;
-        vClients = _LoadClientDataFromFile();
 
-        for (clsBankClient& C : vClients) {
+    static vector <clsBankClient>GetClientsList() {
 
-            if (C.AccountNumber() == _AccountNumber)
-            {
-                C._MarkForDelete = true;
-                break;
-            }
-
-        }
-        _SaveDataToFile(vClients);
-        *this = _GetEmptyClientObject();
-        return true;
+        return _LoadClientDataFromFile();
     }
+
+
 
 };
 
