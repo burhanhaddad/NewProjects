@@ -27,7 +27,7 @@ private:
 public:
    static void ShowDeleteClientScreen() {
 
-       _DrawScreenHeader("\t  Delete Client Screen");
+       _DrawScreenHeader("\tDelete Client Screen");
 
         string AccountNumber = "";
         cout << "\nPlease Enter client account number: ";
