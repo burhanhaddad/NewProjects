@@ -59,7 +59,7 @@ public:
         {
             if (Client1.Withdraw(Amount))
             {
-               /* Client1.Withdraw(Amount);*/
+               
                 cout << "\nAmount Withdrawed Successfully.\n";
                 cout << "\nNew Balance Is: " << Client1.AccountBalance;
             }
@@ -67,7 +67,8 @@ public:
             {
 
                 cout << "Amount exceeds your current balance. Please enter a valid amount.\n";
-                cout << "\nNew Balance Is: " << Client1.AccountBalance;
+                cout << "\n Amount to Withdraw is: " << Amount;
+                cout << "\nYour Balance Is: " << Client1.AccountBalance;
             }
            
 

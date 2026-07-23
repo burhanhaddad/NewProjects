@@ -32,6 +32,13 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(318,28): war
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(331,32): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsUtil.h(63,5): warning C4102: 'defualt': unreferenced label
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsTotalBalanceScreen.h(56,82): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'NewProjects.cpp')
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\NewProjects.cpp(49,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(284,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(334,1): warning C4715: 'clsBankClient::Withdraw': not all control paths return a value
   NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe
