@@ -65,27 +65,22 @@ private:
 		case enManageUserMenueOptions::eListUUser:
 			system("cls");
 			_ShowLisUserScreen();
-			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eAddNewUser:
 			system("cls");
 			_ShowAddNewScreen();
-			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eDeleteUser:
 			system("cls");
 			_ShowDeleteScreen();
-			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eUpdateUser:
 			system("cls");
 			_ShowUpdateScreen();
-			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eFindUser:
 			system("cls");
 			_ShowFindScreen();
-			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eMainMenue:
 			break;
@@ -97,10 +92,10 @@ public:
 	{
 
 		system("cls");
-		_DrawScreenHeader("Manage User Screen");
+		_DrawScreenHeader("\Manage User Screen");
 
 		cout << setw(37) << left << "" << "===========================================\n";
-		cout << setw(37) << left << "" << "\tManage User Menue\n";
+		cout << setw(37) << left << "" << "\t\Manage User Menue\n";
 		cout << setw(37) << left << "" << "===========================================\n";
 		cout << setw(37) << left << "" << "\t[1] List Users.\n";
 		cout << setw(37) << left << "" << "\t[2] Add New User.\n";
@@ -114,5 +109,3 @@ public:
 		_PerfromManageUserMenueOption((enManageUserMenueOptions)_ReadManageMenueOption());
 	}
 };
-
-
