@@ -22,7 +22,7 @@ private:
 	static short _ReadTransactionMenueOption()
 	{
 		cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 4]? ";
-		short Choice = clsInputValidate::ReadIntNumberBetween(1, 8, "Enter Number between 1 to 4? ");
+		short Choice = clsInputValidate::ReadIntNumberBetween(1, 4, "Enter Number between 1 to 4? ");
 		return Choice;
 	}
 
