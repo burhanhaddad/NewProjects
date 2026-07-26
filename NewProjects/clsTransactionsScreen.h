@@ -86,10 +86,10 @@ public:
 		cout << setw(37) << left << "" << "===========================================\n";
 		cout << setw(37) << left << "" << "\t\tTransaction Menue\n";
 		cout << setw(37) << left << "" << "===========================================\n";
-		cout << setw(37) << left << "" << "\t[1] Deposit.\n";
-		cout << setw(37) << left << "" << "\t[2] Withdraw.\n";
-		cout << setw(37) << left << "" << "\t[3] Total Balances.\n";
-		cout << setw(37) << left << "" << "\t[4] Main Menue.\n";
+		cout << setw(37) << left << "" << "\t\t[1] Deposit.\n";
+		cout << setw(37) << left << "" << "\t\t[2] Withdraw.\n";
+		cout << setw(37) << left << "" << "\t\t[3] Total Balances.\n";
+		cout << setw(37) << left << "" << "\t\t[4] Main Menue.\n";
 	
 		cout << setw(37) << left << "" << "===========================================\n";
 
