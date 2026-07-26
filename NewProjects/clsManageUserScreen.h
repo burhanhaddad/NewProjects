@@ -65,22 +65,27 @@ private:
 		case enManageUserMenueOptions::eListUUser:
 			system("cls");
 			_ShowLisUserScreen();
+			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eAddNewUser:
 			system("cls");
 			_ShowAddNewScreen();
+			_GoBackToManageUserMenue();		
 			break;
 		case enManageUserMenueOptions::eDeleteUser:
 			system("cls");
 			_ShowDeleteScreen();
+			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eUpdateUser:
 			system("cls");
 			_ShowUpdateScreen();
+			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eFindUser:
 			system("cls");
 			_ShowFindScreen();
+			_GoBackToManageUserMenue();
 			break;
 		case enManageUserMenueOptions::eMainMenue:
 			break;
