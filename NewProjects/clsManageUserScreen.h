@@ -3,7 +3,9 @@
 #include <iostream>
 #include "clsScreen.h"
 #include "clsInputValidate.h"
-
+#include"clsUserSListScreen.h"
+#include"clsAddNewUserScreen.h" 
+#include"clsDeleteUserScreen.h"
 
 class clsManageUserScreen : protected clsScreen
 {
@@ -35,17 +37,17 @@ private:
 
 	static void _ShowLisUserScreen() {
 
-		cout << "Show list menue will be here";
+		clsListUsersScreen::ShowUsersList();
 	}
 
 	static void _ShowAddNewScreen() {
 
-		cout << "Add new screen will be here";
+		clsAddNewUserScreen::ShowAddNewUserScreen();
 	}
 
 	static void _ShowDeleteScreen() {
 
-		cout << "Delete screen will be here";
+		clsDeleteUserScreen::ShowDeleteUserScreen();
 	}
 
 	static void _ShowUpdateScreen() {

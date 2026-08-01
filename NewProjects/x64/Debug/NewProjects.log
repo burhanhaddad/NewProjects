@@ -41,4 +41,5 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsTotalBalanceScreen.h(56,8
 C:\Users\burha\source\repos\NewProjects\NewProjects\NewProjects.cpp(49,54): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(284,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(334,1): warning C4715: 'clsBankClient::Withdraw': not all control paths return a value
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsUser.h(308,1): warning C4715: 'clsUser::Save': not all control paths return a value
   NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe
