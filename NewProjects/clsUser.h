@@ -316,17 +316,13 @@ public:
 
     bool Delete()
     {
+
         vector <clsUser> _vUsers;
         _vUsers = _LoadUsersDataFromFile();
 
         for (clsUser& U : _vUsers)
-        {
-            if (U._UserName=="Admin")
-            {
-				_MarkedForDelete = false;
-				cout << "\nError: Admin user cannot be deleted.\n";
-				return false;
-            }
+        {  
+          
             if (U.UserName == _UserName)
             {
                 U._MarkedForDelete = true;

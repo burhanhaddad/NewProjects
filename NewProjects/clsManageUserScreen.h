@@ -6,7 +6,8 @@
 #include"clsUserSListScreen.h"
 #include"clsAddNewUserScreen.h" 
 #include"clsDeleteUserScreen.h"
-
+#include"clsUpdateUserScreen.h"
+#include"clsFindUserScreen.h"
 class clsManageUserScreen : protected clsScreen
 {
 private:
@@ -52,12 +53,12 @@ private:
 
 	static void _ShowUpdateScreen() {
 
-		cout << "update screen will be here";
+		clsUpdateUserScreen::ShowUpdateUserScreen();
 	}
 
 	static void _ShowFindScreen() {
 
-		cout << "find screen will be here";
+		clsFindUserScreen::ShowFindUserScreen();
 	}
 
 	static void _PerfromManageUserMenueOption(enManageUserMenueOptions ManageUserMenueOptions) {
