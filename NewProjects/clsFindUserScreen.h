@@ -34,7 +34,16 @@ public:
 		}
 
 		clsUser User1 = clsUser::Find(UserName);
-		cout << "\nUser Found :-)\n";
+		
+		if (!User1.IsEmpty())
+		{
+			cout << "\nUser Found :-)\n";
+			
+		}
+		else
+		{
+			cout << "\nUser Not Found :-(\n";
+		}
 		_PrintUserCard(User1);
 	}
 };
