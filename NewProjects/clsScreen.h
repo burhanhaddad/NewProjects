@@ -2,7 +2,7 @@
 #include <iostream>
 #include "clsUser.h"
 #include "Global.h"
-
+#include"clsDate.h"
 using namespace std;
 
 class clsScreen
@@ -17,6 +17,8 @@ protected:
             cout << "\n\t\t\t\t\t  " << SubTitle;
         }
         cout << "\n\t\t\t\t\t______________________________________\n\n";
+		cout << "\t\t\t\t\t  User: " << CurrentUser.FullName() << " (" << CurrentUser.UserName << ")";
+        PrintDateTime();
     }
 
     static bool CheckAccessRights(clsUser::enPermissions Permission)
@@ -35,5 +37,10 @@ protected:
         }
 
     }
+	static void PrintDateTime()
+	{
+		clsDate Date1 = clsDate::GetSystemDate();
+        cout << "\n\t\t\t\t\t  Date: " << Date1.DateToString() << endl << endl;
+	}
 };
 
