@@ -47,6 +47,11 @@ public:
 
     static void ShowAddNewClientScreen() {
 
+        if (!CheckAccessRights(clsUser::pAddNewClient))
+        {
+            return;
+        }
+
         _DrawScreenHeader("\t  Add New Client Screen");
         string AccountNumber = "";
         cout << "\nPlease Enter client account number: ";

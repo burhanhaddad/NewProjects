@@ -16,7 +16,7 @@ private:
 		{
 			if (LoginFaild)
 			{
-				cout << "\nLogin Failed, Please try again :-(";
+				cout << "\n Invalid User Name or Password, please try again :-)\n";
 			}
 
 			cout << "\nPlease enter User Name: ";
@@ -30,7 +30,10 @@ private:
 		clsMainScreen::ShowMainMenue();
 	}
 public:
+
+
 	static void ShowLoginScreen() {
+
 		system("cls");
 		_DrawScreenHeader("\tLogin Screen");
 		_Login();

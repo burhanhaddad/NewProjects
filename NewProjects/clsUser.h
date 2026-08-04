@@ -103,7 +103,7 @@ private:
         }
 
     }
-
+  
     void _Update()
     {
         vector <clsUser> _vUsers;
@@ -167,7 +167,10 @@ public:
         _Password = Password;
         _Permissions = Permissions;
     }
+    void ClearObject() {
 
+        *this = _GetEmptyUserObject();
+    }
     bool IsEmpty()
     {
         return (_Mode == enMode::EmptyMode);
@@ -349,6 +352,20 @@ public:
         return _LoadUsersDataFromFile();
     }
 
-
+    bool CheckAccessPermission(enPermissions Permission) 
+        {
+            if (this->Permissions==enPermissions::eAll)
+            {
+				return true;
+            }
+            if ((Permission & this->Permissions) == Permission)
+            {
+				return true;
+            }
+            else
+            {
+				return false;
+            }
+        }
 };
 
