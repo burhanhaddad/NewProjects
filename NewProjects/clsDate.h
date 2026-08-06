@@ -14,6 +14,9 @@ private:
 	int _Day = 1;
 	int _Month = 1;
 	int _Year = 1900;
+	int _Hour = 0;
+	int _Minute = 0;
+	int _Second = 0;
 public:
 
 	clsDate() {
@@ -38,6 +41,14 @@ public:
 		_Day = Day;
 		_Month = Month;
 		_Year = Year;
+	}
+	clsDate(short Day, short Month, short Year, short Hour, short Minute, short Second) {
+		_Day = Day;
+		_Month = Month;
+		_Year = Year;
+		_Hour = Hour;
+		_Minute = Minute;
+		_Second = Second;
 	}
 	clsDate(short DateOrderInYear, short Year) {
 
@@ -92,7 +103,44 @@ public:
 
 		return clsDate(Day, Month, Year);
 	}
+	//static clsDate GetSystemDateTime()
+	//{
 
+	//	//system date
+	//	time_t t = time(0);
+	//	tm* now = localtime(&t);
+
+	//	short Day, Month, Year, Hour, Minute, Second;
+
+	//	Year = now->tm_year + 1900;
+	//	Month = now->tm_mon + 1;
+	//	Day = now->tm_mday;
+	//	Hour = now->tm_hour;
+	//	Minute = now->tm_min;
+	//	Second = now->tm_sec;
+
+	//	return clsDate(Day, Month, Year, Hour, Minute, Second);
+	//}
+	static clsDate GetSystemDateTime()
+	{
+		time_t t = time(0);
+
+		t += (3 * 60 * 60);
+
+		tm* now = gmtime(&t);
+
+		short Day, Month, Year, Hour, Minute, Second;
+
+		Year = now->tm_year + 1900;
+		Month = now->tm_mon + 1;
+		Day = now->tm_mday;
+		Hour = now->tm_hour; 
+		Minute = now->tm_min;
+		Second = now->tm_sec;
+
+		
+		return clsDate(Day, Month, Year, Hour, Minute, Second);
+	}
 	void Print() {
 
 		cout << DateToString() << endl;
@@ -137,6 +185,13 @@ public:
 	static string DateToString(clsDate Date) {
 
 		return to_string(Date.Day) + "/" + to_string(Date.Month) + "/" + to_string(Date.Year);
+	}
+	static string DateTimeToString(clsDate Date) {
+		return to_string(Date.Day) + "/" + to_string(Date.Month) + "/" + to_string(Date.Year) + " - " +
+			to_string(Date._Hour) + ":" + to_string(Date._Minute) + ":" + to_string(Date._Second);
+	}
+	string DateTimeToString() {
+		return DateTimeToString(*this);
 	}
 	string DateToString() {
 

@@ -5,6 +5,7 @@
 #include "clsString.h"
 #include <vector>
 #include <fstream>
+#include"clsDate.h"
 
 using namespace std;
 class clsUser : public clsPerson
@@ -148,6 +149,17 @@ private:
     {
         return clsUser(enMode::EmptyMode, "", "", "", "", "", "", 0);
     }
+	 static string _PrepareLoginRecordLine(string UserName, string Password, bool LoginSucceed,int Permissions)
+	{
+		clsDate Date1 = clsDate::GetSystemDateTime();
+		string Status = LoginSucceed ? "Success" : "Failed";
+		string RecordLine = Date1.DateTimeToString() + "#//#" +
+			UserName + "#//#" +
+			Password + "#//#" +
+			to_string(Permissions) + "#//#" +
+			Status;
+		return RecordLine;
+	}
 
 public:
     enum enPermissions
@@ -367,5 +379,19 @@ public:
 				return false;
             }
         }
+	static void RegisterLogInAttempt(string UserName,string Password, bool LoginSucceed,int Permissions)
+	{
+		string RecordLine = _PrepareLoginRecordLine(UserName, Password, LoginSucceed,Permissions);
+		
+		fstream MyFile;
+		MyFile.open("LoginRegister.txt", ios::out | ios::app);
+		if (MyFile.is_open())
+		{
+			
+            
+			MyFile << RecordLine << endl;
+			MyFile.close();
+		}
+	}
 };
 

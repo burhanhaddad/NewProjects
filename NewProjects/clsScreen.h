@@ -39,8 +39,8 @@ protected:
     }
 	static void PrintDateTime()
 	{
-		clsDate Date1 = clsDate::GetSystemDate();
-        cout << "\n\t\t\t\t\t  Date: " << Date1.DateToString() << endl << endl;
+		clsDate Date1 = clsDate::GetSystemDateTime();
+        cout << "\n\t\t\t\t\t  Date: " << Date1.DateTimeToString() << endl << endl;
 	}
 };
 

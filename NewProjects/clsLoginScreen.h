@@ -4,6 +4,7 @@
 #include "clsScreen.h"
 #include"Global.h"
 #include "clsMainScreen.h"
+#include"clsUser.h"
 class clsLoginScreen :protected clsScreen
 {
 private:
@@ -38,10 +39,20 @@ private:
 			cout << "\nPlease enter Password: ";
 			cin >> Password;
 			CurrentUser = clsUser::Find(UserName, Password);
+
 			LoginFaild = CurrentUser.IsEmpty();
 
+			if (LoginFaild)
+			{
+				clsUser::RegisterLogInAttempt(UserName, Password, false,CurrentUser.Permissions);
+			}
+			else
+			{
+				clsUser::RegisterLogInAttempt(UserName, Password, true, CurrentUser.Permissions);
+			}
 		} while (LoginFaild);
 		clsMainScreen::ShowMainMenue();
+
 		return true;
 	}
 public:
