@@ -11,7 +11,7 @@ using namespace std;
 class clsUser : public clsPerson
 {
 private:
-
+    struct stLoginRegisterRecord;
     enum enMode { EmptyMode = 0, UpdateMode = 1, AddNewMode = 2 };
     enMode _Mode;
     string _UserName;
@@ -19,7 +19,20 @@ private:
     int _Permissions;
 
     bool _MarkedForDelete = false;
+   
 
+	static stLoginRegisterRecord _ConvertLoginRegisterToRecord(string Line, string Seperator = "#//#")
+	{
+		vector<string> vData;
+		vData = clsString::Split(Line, Seperator);
+		stLoginRegisterRecord Record;
+		Record.Date = vData[0];
+		Record.UserName = vData[1];
+		Record.Password = vData[2];
+		Record.Permissions = stoi(vData[3]);
+		Record.LoginSucceed = (vData[4] == "Success" ? true : false);
+		return Record;
+	}
     static clsUser _ConvertLinetoUserObject(string Line, string Seperator = "#//#")
     {
         vector<string> vUserData;
@@ -167,6 +180,32 @@ public:
         eAll = -1, pListClients = 1, pAddNewClient = 2, pDeleteClient = 4, pUpdateClient = 8, pFindClient = 16,
         pTransactionsList = 32, pManageUsers = 64
     };
+	struct stLoginRegisterRecord
+	{
+		string Date;
+		string UserName;
+		string Password;
+		int Permissions;
+		bool LoginSucceed;
+	};
+    static vector<stLoginRegisterRecord> GetLoginRegisterList() {
+
+        vector <stLoginRegisterRecord> vData;
+        fstream MyFile;
+        MyFile.open("LoginRegister.txt", ios::in);//read Mode
+        if (MyFile.is_open()) {
+
+            string Line;
+            while (getline(MyFile, Line)) {
+
+                stLoginRegisterRecord Record = _ConvertLoginRegisterToRecord(Line);
+                vData.push_back(Record);
+            }
+            MyFile.close();
+        }
+        return vData;
+
+    }
 
     clsUser(enMode Mode, string FirstName, string LastName,
         string Email, string Phone, string UserName, string Password,
