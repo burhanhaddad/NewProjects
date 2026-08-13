@@ -4,6 +4,7 @@
 #include "clsPerson.h"
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
+#include "Global.h"
 
 class clsTransferScreen :protected clsScreen
 {
@@ -73,7 +74,7 @@ public:
         cin >> Answer;
         if (Answer == 'Y' || Answer == 'y')
         {
-            if (SourceClient.Transfer(Amount, DestinationClient))
+            if (SourceClient.Transfer(Amount, DestinationClient,CurrentUser.UserName))
             {
                 cout << "\nTransfer done successfully\n";
             }

@@ -5,7 +5,8 @@
 #include"clsPerson.h"
 #include<vector>
 #include<fstream>
-
+#include "clsUser.h"
+#include "Global.h"
 using namespace std;
 
 class clsBankClient : public clsPerson
@@ -17,6 +18,8 @@ private:
 	string _PinCode;
 	float _AccountBalance;
     bool _MarkForDelete = false;
+
+
 
 	static clsBankClient _ConvertLineToClientObject(string Line, string Separator) {
 
@@ -117,6 +120,40 @@ private:
     void _AddNew() {
 
         AddDataToFile(_ConvertClientObjectToLine(*this));
+    }
+
+
+    string _PrepareTransferLogRecord(float Amount, clsBankClient DestinationClient,
+        string UserName, string Seperator = "#//#")
+    {
+        clsDate Date1 = clsDate::GetSystemDateTime();
+        string TransferLogRecord = "";
+        TransferLogRecord += Date1.DateTimeToString() + Seperator;
+        TransferLogRecord += AccountNumber() + Seperator;
+        TransferLogRecord += DestinationClient.AccountNumber() + Seperator;
+        TransferLogRecord += to_string(Amount) + Seperator;
+        TransferLogRecord += to_string(AccountBalance) + Seperator;
+        TransferLogRecord += to_string(DestinationClient.AccountBalance) + Seperator;
+        TransferLogRecord += UserName;
+        return TransferLogRecord;
+    }
+
+    void _RegisterTransferLog(float Amount, clsBankClient DestinationClient, string UserName)
+    {
+
+        string stDataLine = _PrepareTransferLogRecord(Amount, DestinationClient, UserName);
+
+        fstream MyFile;
+        MyFile.open("TransferLog.txt", ios::out | ios::app);
+
+        if (MyFile.is_open())
+        {
+
+            MyFile << stDataLine << endl;
+
+            MyFile.close();
+        }
+
     }
 public:
 	clsBankClient(enMode Mode, string FirstName, string LastName, string Email, string Phone, string AccountNumber, string PinCode, float AccountBalance)
@@ -333,15 +370,18 @@ public:
 			return true;
         }
     }
-    bool Transfer(double Amount, clsBankClient& DestinationClient) {
+    bool Transfer(double Amount, clsBankClient& DestinationClient, string UserName) {
 
         if (Amount > AccountBalance) {
             return false;
         }
         Withdraw(Amount);
         DestinationClient.Deposit(Amount);
+        _RegisterTransferLog(Amount, DestinationClient, UserName);
 
     }
+
+    
 
 };
 
