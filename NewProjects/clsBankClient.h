@@ -7,11 +7,14 @@
 #include<fstream>
 #include "clsUser.h"
 #include "Global.h"
+#include "clsString.h"
 using namespace std;
 
 class clsBankClient : public clsPerson
 {
 private:
+
+    struct stTransferLogRecord;
     enum enMode { EmptyMode = 0, UpdateMode = 1, AddNewMode = 2 };
 	enMode _Mode;
 	string _AccountNumber;
@@ -19,7 +22,22 @@ private:
 	float _AccountBalance;
     bool _MarkForDelete = false;
 
+    static stTransferLogRecord _ConverTransferLogToRecord(string Line, string Separator = "#//#") {
 
+        vector <string>vData;
+
+        vData = clsString::Split(Line, Separator);
+        stTransferLogRecord Record;
+        Record.Date = vData[0];
+        Record.SourceAccNumber = vData[1];
+        Record.DestinationAccNumber = vData[2];
+        Record.Amount = stof(vData[3]);
+        Record.SourceBalance = stof(vData[4]);
+        Record.DestinationBalance = stof(vData[5]);
+        Record.UserName = (vData[6]);
+
+        return Record;
+    }
 
 	static clsBankClient _ConvertLineToClientObject(string Line, string Separator) {
 
@@ -164,6 +182,17 @@ public:
 		_AccountBalance = AccountBalance;
         _PinCode = PinCode;
 	}
+    
+    struct stTransferLogRecord {
+        string Date;
+        string SourceAccNumber;
+        string DestinationAccNumber;
+        float Amount;
+        float SourceBalance;
+        float DestinationBalance;
+        string UserName;
+
+    };
 
     bool IsEmpty()
     {
@@ -381,6 +410,24 @@ public:
 
     }
 
+    static vector<stTransferLogRecord> GetTransferRegisterList() {
+
+        vector <stTransferLogRecord>vData;
+        fstream Myfile;
+        Myfile.open("TransferLog.txt", ios::in);
+        if (Myfile.is_open()) {
+
+            string Line;
+            while (getline(Myfile, Line)) {
+
+               stTransferLogRecord Record =  _ConverTransferLogToRecord(Line);
+               vData.push_back(Record);
+            }
+            Myfile.close();
+        }
+        
+        return vData;
+    }
     
 
 };

@@ -25,19 +25,24 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsUser.h(183,9): warning C4
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsInputValidate.h(95,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(35,144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(186,12): warning C4240: nonstandard extension used: access to 'clsBankClient::stTransferLogRecord' now defined to be 'public', previously it was defined to be 'private'
+  (compiling source file 'NewProjects.cpp')
+      C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(17,12):
+      see declaration of 'clsBankClient::stTransferLogRecord'
+  
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(53,144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(350,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(379,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(355,28): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(384,28): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(368,32): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(397,32): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(380,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(409,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsUtil.h(63,5): warning C4102: 'defualt': unreferenced label
@@ -49,7 +54,7 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsTotalBalanceScreen.h(56,8
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsTransferScreen.h(49,53): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(321,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(382,1): warning C4715: 'clsBankClient::Transfer': not all control paths return a value
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(350,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(411,1): warning C4715: 'clsBankClient::Transfer': not all control paths return a value
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsUser.h(362,1): warning C4715: 'clsUser::Save': not all control paths return a value
   NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe

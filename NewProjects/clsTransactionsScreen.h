@@ -8,7 +8,7 @@
 #include"clsWithdrawScreen.h"
 #include"clsTotalBalanceScreen.h"
 #include"clsTransferScreen.h"
-
+#include"clsTrasferLogScreen.h"
 class clsTransactionsScreen :protected clsScreen
 {
 private:
@@ -17,14 +17,15 @@ private:
 		enWithdraw = 2,
 		enTotalBalance = 3,
 		enTransfer = 4,
-		enMainMenue = 5
+		enTransferLog = 5,
+		enMainMenue = 6
 
 	};
 
 	static short _ReadTransactionMenueOption()
 	{
-		cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 5]? ";
-		short Choice = clsInputValidate::ReadIntNumberBetween(1, 5, "Enter Number between 1 to 5? ");
+		cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 6]? ";
+		short Choice = clsInputValidate::ReadIntNumberBetween(1, 6, "Enter Number between 1 to 6? ");
 		return Choice;
 	}
 
@@ -54,6 +55,11 @@ private:
 
 		clsTransferScreen::ShowTransferScreen();
 	}
+	static void _ShowTransferLogScreen() {
+
+		clsTrasferLogScreen::ShowTransferLogScreen();
+
+	}
 
 	static void _PerfromTransactionsMenueOption(enTransactionsMenueOptions TransactionsMenueOptions) {
 
@@ -79,7 +85,11 @@ private:
 			_ShowTransferScreen();
 			_GoBackToTransactionMenue();
 			break;
-
+		case enTransactionsMenueOptions::enTransferLog:
+			system("cls");
+			_ShowTransferLogScreen();
+			_GoBackToTransactionMenue();
+			break;
 		case enTransactionsMenueOptions::enMainMenue:
 			
 			break;
@@ -106,6 +116,7 @@ public:
 		cout << setw(37) << left << "" << "\t\t[2] Withdraw.\n";
 		cout << setw(37) << left << "" << "\t\t[3] Total Balances.\n";
 		cout << setw(37) << left << "" << "\t\t[4] Transfer.\n";
+		cout << setw(37) << left << "" << "\t\t[5] Transfer Log.\n";
 		cout << setw(37) << left << "" << "\t\t[5] Main Menue.\n";
 	
 		cout << setw(37) << left << "" << "===========================================\n";
