@@ -17,6 +17,9 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(325,30): warning
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsString.h(373,22): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsUtil.h(63,5): warning C4102: 'defualt': unreferenced label
+  (compiling source file 'NewProjects.cpp')
+  
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsUser.h(183,9): warning C4240: nonstandard extension used: access to 'clsUser::stLoginRegisterRecord' now defined to be 'public', previously it was defined to be 'private'
   (compiling source file 'NewProjects.cpp')
       C:\Users\burha\source\repos\NewProjects\NewProjects\clsUser.h(14,12):
@@ -45,9 +48,6 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(397,32): war
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(409,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsUtil.h(63,5): warning C4102: 'defualt': unreferenced label
-  (compiling source file 'NewProjects.cpp')
-  
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsTotalBalanceScreen.h(56,82): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'NewProjects.cpp')
   
@@ -55,6 +55,6 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsTransferScreen.h(49,53): 
   (compiling source file 'NewProjects.cpp')
   
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(350,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(411,1): warning C4715: 'clsBankClient::Transfer': not all control paths return a value
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsUser.h(362,1): warning C4715: 'clsUser::Save': not all control paths return a value
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(411,1): warning C4715: 'clsBankClient::Transfer': not all control paths return a value
   NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe

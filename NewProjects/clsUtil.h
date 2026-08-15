@@ -213,32 +213,7 @@ public:
 
     }
 
-    static string  EncryptText(string Text, short EncryptionKey)
-    {
 
-        for (int i = 0; i <= Text.length(); i++)
-        {
-
-            Text[i] = char((int)Text[i] + EncryptionKey);
-
-        }
-
-        return Text;
-
-    }
-
-    static string  DecryptText(string Text, short EncryptionKey)
-    {
-
-        for (int i = 0; i <= Text.length(); i++)
-        {
-
-            Text[i] = char((int)Text[i] - EncryptionKey);
-
-        }
-        return Text;
-
-    }
 
     static string NumberToText(int Number) {
 
@@ -295,6 +270,31 @@ public:
         }
     }
 
+    static string  EncryptText(string Text, short EncryptionKey = 4)
+    {
 
+        for (int i = 0; i <= Text.length(); i++)
+        {
+
+            Text[i] = char((int)Text[i] + EncryptionKey);
+
+        }
+
+        return Text;
+
+    }
+
+    static string  DecryptText(string Text, short EncryptionKey = 4)
+    {
+
+        for (int i = 0; i <= Text.length(); i++)
+        {
+
+            Text[i] = char((int)Text[i] - EncryptionKey);
+
+        }
+        return Text;
+
+    }
 };
 

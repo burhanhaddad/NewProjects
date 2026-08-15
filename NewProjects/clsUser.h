@@ -6,7 +6,7 @@
 #include <vector>
 #include <fstream>
 #include"clsDate.h"
-
+#include "clsUtil.h"
 using namespace std;
 class clsUser : public clsPerson
 {
@@ -28,7 +28,7 @@ private:
 		stLoginRegisterRecord Record;
 		Record.Date = vData[0];
 		Record.UserName = vData[1];
-		Record.Password = vData[2];
+		Record.Password = clsUtil::DecryptText(vData[2]);
 		Record.Permissions = stoi(vData[3]);
 		Record.LoginSucceed = (vData[4] == "Success" ? true : false);
 		return Record;
@@ -39,7 +39,7 @@ private:
         vUserData = clsString::Split(Line, Seperator);
 
         return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
-            vUserData[3], vUserData[4], vUserData[5], stoi(vUserData[6]));
+            vUserData[3], vUserData[4], clsUtil::DecryptText(vUserData[5]), stoi(vUserData[6]));
 
     }
 
@@ -52,7 +52,7 @@ private:
         UserRecord += User.Email + Seperator;
         UserRecord += User.Phone + Seperator;
         UserRecord += User.UserName + Seperator;
-        UserRecord += User.Password + Seperator;
+        UserRecord += clsUtil::EncryptText(User.Password) +Seperator;
         UserRecord += to_string(User.Permissions);
 
         return UserRecord;
@@ -168,7 +168,7 @@ private:
 		string Status = LoginSucceed ? "Success" : "Failed";
 		string RecordLine = Date1.DateTimeToString() + "#//#" +
 			UserName + "#//#" +
-			Password + "#//#" +
+			clsUtil::EncryptText(Password) + "#//#" +
 			to_string(Permissions) + "#//#" +
 			Status;
 		return RecordLine;
