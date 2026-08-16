@@ -13,7 +13,7 @@ private:
 
 	static void _PrintCurrencyCard(clsCurrency Currency) {
 
-		cout << "\nUser Card:";
+		cout << "\nCurrency Card:";
 		cout << "\n___________________";
 		cout << "\nCountry  : " << Currency.Country();
 		cout << "\nCode     : " << Currency.CurrencyCode();
