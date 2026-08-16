@@ -3,6 +3,7 @@
 #include <iostream>
 #include "clsScreen.h"
 #include"clsInputValidate.h"
+#include "clsCurrenciesListScreen.h"
 class clsCurrencyExchangeMinScreen :protected clsScreen
 {
 private:
@@ -29,7 +30,7 @@ private:
 
 	static void _ShowListScreen() {
 
-		cout << "list screen will be here";
+		clsCurrenciesListScreen::ShowCurrenciesListScreen();
 	}
 	static void _ShowFindScreen() {
 		cout << "find screen will be here";
