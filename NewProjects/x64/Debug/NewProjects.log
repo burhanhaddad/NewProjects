@@ -58,6 +58,6 @@ C:\Users\burha\source\repos\NewProjects\NewProjects\clsUpdateRateCurrency.h(55,2
   (compiling source file 'NewProjects.cpp')
   
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(350,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
-C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(411,1): warning C4715: 'clsBankClient::Transfer': not all control paths return a value
 C:\Users\burha\source\repos\NewProjects\NewProjects\clsUser.h(362,1): warning C4715: 'clsUser::Save': not all control paths return a value
+C:\Users\burha\source\repos\NewProjects\NewProjects\clsBankClient.h(411,1): warning C4715: 'clsBankClient::Transfer': not all control paths return a value
   NewProjects.vcxproj -> C:\Users\burha\source\repos\NewProjects\x64\Debug\NewProjects.exe
